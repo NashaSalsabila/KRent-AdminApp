@@ -58,6 +58,7 @@ public class Mainframe extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -125,6 +126,7 @@ public class Mainframe extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(550, 310, 73, 23);
 
+        tabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -138,14 +140,14 @@ public class Mainframe extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 350, 690, 160);
 
-        jButton2.setText("X");
+        jButton2.setText("Refresh");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(160, 520, 30, 23);
+        jButton2.setBounds(90, 520, 100, 23);
 
         jButton3.setText("Save");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +176,22 @@ public class Mainframe extends javax.swing.JFrame {
         getContentPane().add(jButton5);
         jButton5.setBounds(360, 520, 73, 23);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 690, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 640, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 690, 640);
+
         setSize(new java.awt.Dimension(710, 683));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -189,17 +207,17 @@ public class Mainframe extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int lp1 = Integer.parseInt(lp.getText());
         int hari = 20000;
-        int harga = lp1*hari;
+         String harga = String.valueOf(lp1*hari);
         
          
         
-        if("".equals(np.getText()) || "".equals(ap.getText()) || "".equals(ns.getText()) || "".equals(npol.getText()) || "".equals(tp.getText()) || "".equals(tk.getText()) || "".equals(harga=lp1*hari ))
+        if("".equals(np.getText()) || "".equals(ap.getText()) || "".equals(ns.getText()) || "".equals(npol.getText()) || "".equals(tp.getText()) || "".equals(tk.getText()) || "".equals(harga))
         {
             JOptionPane.showMessageDialog(this, "Harap lengkapi Data","Tidak Valid", JOptionPane.WARNING_MESSAGE);
         }     
         else
         {
-            String SQL = "INSERT INTO peminjaman (nama,alamat,no_struk,no_polisi,tgl_pinjam,tgl_kembali,harga) " + "VALUES('"+np.getText()+"','"+ap.getText() + "','" + ns.getText() + "','" + np.getText() + "','" + tp.getText()+"','" + tk.getText()+"','" + lp.getText()+"')";
+            String SQL = "INSERT INTO peminjaman (nama,alamat,no_struk,no_polisi,tgl_pinjam,tgl_kembali,harga) " + "VALUES('"+np.getText()+"','"+ap.getText() + "','" + ns.getText() + "','" + np.getText() + "','" + tp.getText()+"','" + tk.getText()+"','" + harga+"')";
 
             int status = KoneksiDB.execute(SQL);
 
@@ -306,6 +324,7 @@ int baris = tabel.getSelectedRow();
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lp;
     private javax.swing.JTextField np;

@@ -41,8 +41,10 @@ public class Loginfrane extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         nama = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -78,7 +80,11 @@ public class Loginfrane extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(150, 250, 73, 23);
 
-        pack();
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 300);
+
+        setBounds(0, 0, 416, 339);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -157,6 +163,7 @@ public class Loginfrane extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nama;
     private javax.swing.JTextField password;
     // End of variables declaration//GEN-END:variables
