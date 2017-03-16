@@ -1,9 +1,11 @@
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -55,6 +57,7 @@ public class Mainframe extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -62,56 +65,56 @@ public class Mainframe extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("K RENT ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(210, 0, 90, 40);
+        jLabel1.setBounds(320, 0, 90, 40);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Lama Peminjaman");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 310, 110, 15);
+        jLabel4.setBounds(180, 310, 110, 15);
         getContentPane().add(lp);
-        lp.setBounds(200, 300, 110, 30);
+        lp.setBounds(310, 300, 110, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Nama Peminjam");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 70, 100, 15);
+        jLabel5.setBounds(180, 70, 100, 15);
         getContentPane().add(np);
-        np.setBounds(200, 60, 110, 30);
+        np.setBounds(310, 60, 110, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Alamat Peminjam");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(70, 110, 110, 15);
+        jLabel6.setBounds(180, 110, 110, 15);
         getContentPane().add(ap);
-        ap.setBounds(200, 100, 110, 30);
+        ap.setBounds(310, 100, 110, 30);
         getContentPane().add(ns);
-        ns.setBounds(200, 140, 110, 30);
+        ns.setBounds(310, 140, 110, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("No Struk");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 150, 110, 15);
+        jLabel7.setBounds(180, 150, 110, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("No Polisi");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 190, 110, 15);
+        jLabel8.setBounds(180, 190, 110, 15);
         getContentPane().add(npol);
-        npol.setBounds(200, 180, 110, 30);
+        npol.setBounds(310, 180, 110, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Tanggal Pinjam");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(70, 230, 110, 15);
+        jLabel9.setBounds(180, 230, 110, 15);
         getContentPane().add(tp);
-        tp.setBounds(200, 220, 110, 30);
+        tp.setBounds(310, 220, 110, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setText("Tanggal Kembali");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(70, 270, 110, 15);
+        jLabel10.setBounds(180, 270, 110, 15);
         getContentPane().add(tk);
-        tk.setBounds(200, 260, 110, 30);
+        tk.setBounds(310, 260, 110, 30);
 
         jButton1.setText("Clear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +123,7 @@ public class Mainframe extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(330, 310, 73, 23);
+        jButton1.setBounds(550, 310, 73, 23);
 
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -133,16 +136,16 @@ public class Mainframe extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabel);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 350, 460, 160);
+        jScrollPane1.setBounds(0, 350, 690, 160);
 
-        jButton2.setText("Print");
+        jButton2.setText("X");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(250, 520, 73, 23);
+        jButton2.setBounds(160, 520, 30, 23);
 
         jButton3.setText("Save");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +154,7 @@ public class Mainframe extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(330, 280, 73, 23);
+        jButton3.setBounds(440, 310, 73, 23);
 
         jButton4.setText("Delete");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -160,23 +163,37 @@ public class Mainframe extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(120, 520, 73, 23);
+        jButton4.setBounds(230, 520, 73, 23);
 
-        setSize(new java.awt.Dimension(481, 683));
+        jButton5.setText("Print");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(360, 520, 73, 23);
+
+        setSize(new java.awt.Dimension(710, 683));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        np.setText("");ap.setText("");ns.setText("");npol.setText("");tp.setText("");tk.setText("");lp.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        selectData();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          
-        if("".equals(np.getText()) || "".equals(ap.getText()) || "".equals(ns.getText()) || "".equals(npol.getText()) || "".equals(tp.getText()) || "".equals(tk.getText()) || "".equals(lp.getText()))
+        int lp1 = Integer.parseInt(lp.getText());
+        int hari = 20000;
+        int harga = lp1*hari;
+        
+         
+        
+        if("".equals(np.getText()) || "".equals(ap.getText()) || "".equals(ns.getText()) || "".equals(npol.getText()) || "".equals(tp.getText()) || "".equals(tk.getText()) || "".equals(harga=lp1*hari ))
         {
             JOptionPane.showMessageDialog(this, "Harap lengkapi Data","Tidak Valid", JOptionPane.WARNING_MESSAGE);
         }     
@@ -194,7 +211,7 @@ public class Mainframe extends javax.swing.JFrame {
 
             else
             {
-                JOptionPane.showMessageDialog(this,"Data gagal ditambahkan","Gagal", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this,"Data gagal ditambahkan, Masukkan Inputan dengan Benar","Gagal", JOptionPane.WARNING_MESSAGE);
             }
 ;
             
@@ -202,8 +219,42 @@ public class Mainframe extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+int baris = tabel.getSelectedRow();
+
+        if(baris != -1)
+        {
+            String nama = tabel.getValueAt(baris, 0).toString();
+            String SQL = "DELETE FROM peminjaman WHERE nama='"+nama+"'";
+
+            int status = KoneksiDB.execute(SQL);
+
+            if (status == 1)
+            {
+                JOptionPane.showMessageDialog(this, "Data Berhasil di hapus","Sukses",JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data gagal dihapus","Gagal", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+
+        else
+        {
+            JOptionPane.showMessageDialog(this,"Pilih Baris Data Terlebih Dahulu","Error",JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       MessageFormat header = new MessageFormat("Data Peminjam K RENT");
+       MessageFormat footer = new MessageFormat("Page{0, number, integer}      ");
+       
+       try{
+           tabel.print(JTable.PrintMode.FIT_WIDTH, header, footer, true,null,true,null);
+          }
+       catch (java.awt.print.PrinterException e)
+       {System.err.format("Cannot print %s%n", e.getMessage());    }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +297,7 @@ public class Mainframe extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel4;
@@ -267,7 +319,7 @@ public class Mainframe extends javax.swing.JFrame {
     private void selectData() 
     {
     
-        String kolom[] = {"np","ap","ns","npol","tp","tk","harga"};
+        String kolom[] = {"Nama","Alamat","No Struk","No Polisi","Pinjam","Kembali","Harga"};
         DefaultTableModel dtm = new DefaultTableModel(null, kolom);
         
         String SQL = "SELECT * FROM peminjaman";
